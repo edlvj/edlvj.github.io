@@ -7,37 +7,36 @@
   </head>
  <body>
     <a-scene>
-      
-      
       <a-entity text="value: Work Expirience; color: #333; width: 8; height: auto" position="3 3 -9">
-        <a-image src="#tr" position="0 -1 0"  style="z-index: 100;" static-body></a-image>
-        <a-image src="#nv" position="-5 -1 0" ></a-image>
+        <a-image src="#tr" position="0 -1 0"  geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+        <a-image src="#nv" position="-5 -1 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
         <a-entity text="value: Backend developer; color: #333; width: 6; height: auto" position="2 -2 0"></a-entity>
         <a-entity text="value: Web developer; color: #333; width: 6; height: auto" position="-3 -2 0"></a-entity>
       </a-entity>
       
       <a-entity text="value: Education; color: #333; width: 8; height: auto" position="5 3 -1"  rotation="0 -90 0"> 
-         <a-image src="#dkrkm" position="-6 -1 0" ></a-image>
-        <a-image src="#nmu" position="-1 -1 0" ></a-image>
+         <a-image src="#dkrkm" position="-6 -1 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0" ></a-image>
+        <a-image src="#nmu" position="-1 -1 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
         <a-entity text="value: National Mining University; color: #333; width: 8; height: auto" position="1 -2 0"></a-entity>
         <a-entity text="value: DKR KM DNU of О. Gonchar; color: #333; width: 6; height: auto" position="-4 -2 0"></a-entity>
       </a-entity>
               
       <a-entity text="value: Skills; color: #333; width: 8; height: auto" position="-4 3 1" rotation="0 -180 0">
-         <a-image src="#js" position="-2 -2 0" ></a-image>
-         <a-image src="#php" position="-4 -2 0" ></a-image>
-         <a-image src="#ruby" position="-6 -2 0" ></a-image>
-         <a-image src="#angular" position="0 0 0" ></a-image>
-         <a-image src="#pg" position="-8 0 0"></a-image>
-         <a-image src="#react" position="-2 0 0"></a-image>
-         <a-image src="#ror" position="-6 0 0"></a-image>
-         <a-image src="#vue" position="0 -2 0"></a-image>
+         <a-image src="#yii" position="-8 -2 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+         <a-image src="#js" position="-2 -2 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+         <a-image src="#php" position="-4 -2 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+         <a-image src="#ruby" position="-6 -2 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+         <a-image src="#angular" position="0 0 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+         <a-image src="#pg" position="-8 0 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+         <a-image src="#react" position="-2 0 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+         <a-image src="#ror" position="-6 0 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+         <a-image src="#vue" position="0 -2 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
       </a-entity>
       
       <a-entity text="value: Projects; color: #333; width: 8; height: auto" position="-5 3 -7" rotation="0 -270 0">
-        <a-image src="#bi" width="2"  height="1.5" position="0 -1 0"></a-image>
-        <a-image src="#bs" width="2"  height="1.5" position="-3 -1 0"></a-image>
-        <a-image src="#siw"  width="2"  height="1.5" position="-6 -1 0"></a-image>
+        <a-image src="#bi"  position="0 -1 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+        <a-image src="#bs"  position="-3 -1 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
+        <a-image src="#siw"  position="-6 -1 0" geometry="primitive: box" width= "0.01" height= "1" rotation="0 -90 0"></a-image>
         <a-entity text="value: https://github.com/edlvj; color: #333; width: 6; height: auto"   position="1 0 0"></a-entity>
         
       </a-entity>
@@ -65,14 +64,18 @@
         <!-- skills -->
         
         <img id="js" src="skills/js.png">
-        <img id="php" src="skills/php.png">
-        <img id="ruby" src="skills/ruby.png">
-        
         <img id="angular" src="skills/angular.png">
         <img id="pg" src="skills/pg.png">
         <img id="react" src="skills/react.png">
-        <img id="ror" src="skills/ror.png">
         <img id="vue" src="skills/vue.png">
+        
+        <img id="php" src="skills/php.png">
+        <img id="yii" src="skills/yii.png">
+        
+        <img id="ruby" src="skills/ruby.png">
+        <img id="ror" src="skills/ror.png">
+        
+       
         <!-- projects -->
         
         <img id="bi" src="projects/bl.png">
@@ -80,9 +83,6 @@
         <img id="siw" src="projects/siw.png">
         
       </a-assets>
-    
-    
     </a-scene>
-	
 </body>
 </html>
