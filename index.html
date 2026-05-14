@@ -1,1 +1,693 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet id=google-fonts-css href="https://fonts.googleapis.com/css?family=Roboto%2BMono%3A400%2C300%2C300italic%2C700%2C500%2C500italic%2C700italic%2C400italic%7CLato%3A400%2C700%2C300&#038;ver=1.0.0" type=text/css media=all><title>Eduard Horiach - CV</title><link href=/css/app.56f74be3.css rel=preload as=style><link href=/css/chunk-vendors.a368af59.css rel=preload as=style><link href=/js/app.dfc78063.js rel=preload as=script><link href=/js/chunk-vendors.09fd705e.js rel=preload as=script><link href=/css/chunk-vendors.a368af59.css rel=stylesheet><link href=/css/app.56f74be3.css rel=stylesheet></head><body class="home blog"><noscript><strong>We're sorry but edlvj.github.io doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=/js/chunk-vendors.09fd705e.js></script><script src=/js/app.dfc78063.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eduard Horiach - CV</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Roboto Mono"', 'monospace'],
+            display: ['Lato', 'sans-serif'],
+          },
+          colors: {
+            ink: '#101010',
+            ash: '#444444',
+            mist: '#aaaaaa',
+            paper: '#efefef',
+          },
+          letterSpacing: {
+            wider2: '.15em',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer base {
+      body { @apply font-mono text-ash bg-white antialiased; }
+      h1, h2, h3, h4, h5, h6 { @apply font-display text-ink; }
+      a { @apply text-ink font-medium no-underline transition-all; }
+      a:hover { text-decoration: none; }
+    }
+
+    @layer components {
+      .section-wrap { @apply relative pt-16 pb-8; }
+      .big-bg-title {
+        @apply absolute bottom-0 left-0 font-display font-bold text-paper select-none pointer-events-none;
+        font-size: clamp(72px, 14vw, 180px);
+        line-height: 1;
+        z-index: -1;
+        margin: 0;
+      }
+      .section-frame { @apply border border-mist p-8 md:p-12 relative bg-white; }
+      .section-title { @apply text-2xl md:text-3xl font-display text-ink mb-2; }
+      .sep-mini { @apply mt-6 h-px w-5 bg-ink; }
+
+      .btn-cl {
+        @apply inline-block text-ink border border-ash px-4 py-2 mt-5
+               bg-transparent transition-colors no-underline font-mono text-sm;
+      }
+      .btn-cl:hover { @apply border-mist text-ash; text-decoration: none; }
+
+      .icon-holder { @apply inline-block relative pb-2; }
+      .icon-holder::after {
+        content: ""; @apply absolute bottom-0 left-0 h-px bg-ink; width: 50%;
+      }
+      .icon-holder-center { @apply inline-block relative pb-2; }
+      .icon-holder-center::after {
+        content: ""; @apply absolute bottom-0 h-px bg-ink; width: 50%; left: 25%;
+      }
+
+      .skill-title { @apply text-right relative pr-0 mb-6 text-ink font-display; }
+      .skill-title::after {
+        content: ""; @apply absolute right-0 -bottom-2 w-5 h-px bg-ink;
+      }
+
+      .skillbar { @apply relative block w-full mb-3 py-3; }
+      .skillbar-title { @apply block text-sm text-ink text-right; }
+      .skillbar-bg { @apply absolute left-0 right-0 bottom-3 h-px bg-mist; }
+      .skillbar-bar { @apply absolute right-0 bottom-3 h-0.5 bg-ink transition-all duration-700; }
+      .skillbar-percent { @apply absolute left-0 top-3 text-xs text-mist; }
+
+      .time-year { @apply text-xl text-ink font-normal; }
+      .time-title { @apply text-base text-ink font-display mt-1; }
+
+      .box-it {
+        @apply relative border border-mist mb-6 overflow-hidden bg-white aspect-square;
+      }
+      .box-it img {
+        @apply w-full h-full object-cover transition-opacity duration-300;
+      }
+      .box-it .box-inner {
+        @apply absolute inset-0 flex flex-col items-center justify-center
+               text-center px-4 opacity-0 transition-opacity duration-300
+               bg-ink/70 text-white;
+      }
+      .box-it:hover .box-inner { @apply opacity-100; }
+      .box-it:hover img { @apply opacity-30; }
+
+      .counter-li {
+        @apply inline-block border border-mist text-center
+               min-w-[180px] min-h-[120px] px-6 py-6 m-2;
+      }
+
+      .form-input-cl {
+        @apply w-full bg-transparent border-0 border-b border-ink rounded-none
+               px-0 h-12 outline-none focus:ring-0 focus:border-mist
+               text-ink font-mono text-sm;
+      }
+      textarea.form-input-cl { @apply h-28 py-3; }
+
+      .nav-dot {
+        @apply block w-2.5 h-2.5 rounded-full border border-ink
+               bg-transparent hover:bg-ink transition-colors;
+      }
+    }
+  </style>
+</head>
+<body class="home">
+
+  <!-- Side nav (desktop) -->
+  <nav class="hidden lg:flex flex-col gap-4 fixed right-6 top-1/2 -translate-y-1/2 z-50" aria-label="Section navigation">
+    <a href="#about" class="nav-dot" title="About"></a>
+    <a href="#skills" class="nav-dot" title="Skills & Education"></a>
+    <a href="#experience" class="nav-dot" title="Experience"></a>
+    <a href="#projects" class="nav-dot" title="Personal Projects"></a>
+    <a href="#portfolio" class="nav-dot" title="Portfolio"></a>
+    <a href="#writings" class="nav-dot" title="My Writings"></a>
+    <a href="#contact" class="nav-dot" title="Contact"></a>
+  </nav>
+
+  <!-- Header -->
+  <header
+    class="relative h-[400px] w-full bg-cover bg-center"
+    style="background-image: url('img/banner.png');"
+  >
+    <div class="absolute inset-0"></div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 md:px-8">
+
+    <!-- About -->
+    <section id="about" class="section-wrap">
+      <h2 class="big-bg-title">About</h2>
+      <div class="section-frame">
+        <div class="grid md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-4">
+            <div class="border border-mist aspect-square overflow-hidden bg-paper">
+              <img src="img/profile.jpg" alt="Eduard Horiach" class="w-full h-full object-cover" />
+            </div>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex gap-3 text-sm">
+                <a href="https://github.com/edlvj" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.91c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.79.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/eduard-horiach/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                </a>
+              </div>
+              <a href="Ed-Horiach-Ruby.pdf" class="text-sm" target="_blank" rel="noopener" download>Download CV ↓</a>
+            </div>
+          </div>
+
+          <div class="md:col-span-8">
+            <h3 class="section-title">About me</h3>
+            <p class="text-ash leading-relaxed">
+              Experienced <b>Senior Ruby on Rails Developer</b> with 9+ years of expertise in designing,
+              developing, and maintaining scalable web applications. Proven ability to deliver robust
+              backend systems, API integrations, and front-end solutions using Ruby on Rails and React.js.
+              <pre></pre>
+              Experienced in designing <b>high-load</b>, <b>distributed systems</b> and implementing <b>microservices</b>
+              architectures for <b>scalability</b>, <b>reliability</b>, and <b>performance</b>. Skilled in performance
+              optimization, cloud infrastructure, and payment integrations. 
+              <pre></pre>
+              Collaborative team player with experience working cross-functional teams with strong background in <b>Healthcare</b>,
+              <b>Marketplace</b>, <b>Travel</b> and <b>Insurance</b> domains across North American and European markets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Education -->
+    <section id="skills" class="section-wrap">
+      <h2 class="big-bg-title">Skills</h2>
+      <div class="section-frame">
+        <div class="text-center mb-10">
+          <div class="icon-holder-center">
+            <span class="font-display text-4xl text-ink">🛠️</span>
+          </div>
+          <h3 class="section-title mt-2">Skills</h3>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          <div>
+            <h4 class="skill-title text-sm tracking-wider2 uppercase">Languages & Frameworks</h4>
+            <div class="skillbar">
+              <span class="skillbar-title">Ruby on Rails</span>
+              <span class="skillbar-percent">95%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:95%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">Ruby</span>
+              <span class="skillbar-percent">95%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:95%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">TypeScript</span>
+              <span class="skillbar-percent">75%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:75%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">React.js</span>
+              <span class="skillbar-percent">75%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:75%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">Hotwire</span>
+              <span class="skillbar-percent">70%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:70%"></div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="skill-title text-sm tracking-wider2 uppercase">Databases & Testing</h4>
+            <div class="skillbar">
+              <span class="skillbar-title">PostgreSQL</span>
+              <span class="skillbar-percent">90%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:90%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">MySQL / Redis</span>
+              <span class="skillbar-percent">80%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:80%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">RSpec / Minitest</span>
+              <span class="skillbar-percent">90%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:90%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">TDD</span>
+              <span class="skillbar-percent">85%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:85%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">GraphQL / REST API</span>
+              <span class="skillbar-percent">90%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:90%"></div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="skill-title text-sm tracking-wider2 uppercase">Tools & Integrations</h4>
+            <div class="skillbar">
+              <span class="skillbar-title">Docker / Git</span>
+              <span class="skillbar-percent">85%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:85%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">GCP /AWS / Heroku</span>
+              <span class="skillbar-percent">80%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:80%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">CI/CD / Kubernetes</span>
+              <span class="skillbar-percent">75%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:75%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">Stripe / Twilio / CleverTap</span>
+              <span class="skillbar-percent">80%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:80%"></div>
+            </div>
+            <div class="skillbar">
+              <span class="skillbar-title">Cursor IDE / Vertex AI</span>
+              <span class="skillbar-percent">75%</span>
+              <div class="skillbar-bg"></div>
+              <div class="skillbar-bar" style="width:75%"></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-mist my-12" />
+
+        <div class="text-center mb-10">
+          <div class="icon-holder-center">
+            <span class="font-display text-4xl text-ink">&#127891;</span>
+          </div>
+          <h3 class="section-title mt-2">Education</h3>
+        </div>
+
+        <ol class="relative border-l border-mist ml-4 md:ml-8 space-y-10">
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">2015-2019</p>
+            <p class="time-title">NTU Dnipro Polytechnic</p>
+            <p class="text-ash text-sm mt-1">Master of Software Engineering</p>
+            <p class="text-ash text-sm mt-2 leading-relaxed max-w-xl">
+              I gained extensive hands-on programming experience and developed a strong foundation as a software developer.
+            </p>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">2011-2015</p>
+            <p class="time-title">Rocket-and-Space Engineering College</p>
+            <p class="text-ash text-sm mt-1">Software engineering</p>
+            <p class="text-ash text-sm mt-2 leading-relaxed max-w-xl">
+              Studied basics of programming and got a junior specialist diploma.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section-wrap">
+      <h2 class="big-bg-title">Work</h2>
+      <div class="section-frame">
+        <div class="text-center mb-10">
+          <div class="icon-holder-center">
+            <span class="font-display text-4xl text-ink">&#128188;</span>
+          </div>
+          <h3 class="section-title mt-2">Work Experience</h3>
+        </div>
+
+        <ol class="relative border-l border-mist ml-4 md:ml-8 space-y-10">
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Jan 2026 — Present</p>
+            <p class="time-title">Flight Centre Travel Group — Global travel company</p>
+            <p class="text-ash text-sm mt-1">Senior Ruby on Rails Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Established a Service Level Objective (SLO) in Datadog to monitor GraphQL API performance, targeting latency and reliability with an error rate threshold of &lt;1% for GraphQL requests.</li>
+              <li>Designed and implemented a CSV bulk upload feature supporting ingestion of up to 100,000 records, improving large-scale data import efficiency and system scalability.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Oct 2023 — Apr 2025</p>
+            <p class="time-title">Washos — On-demand mobile car wash services</p>
+            <p class="text-ash text-sm mt-1">Senior Ruby on Rails Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Migrated users to CleverTap for advanced segmentation — increased customer engagement by 30% and drove a 20% uplift in ROI.</li>
+              <li>Reduced API serialization time by ~80% by replacing ActiveModel::Serializer with Oj::Serializer.</li>
+              <li>Upgraded core stack: Ruby 2.7.5 → 3.3.7 and Rails 5.2 → 7.0.8 for performance and long-term support.</li>
+              <li>Eliminated Heroku R14 memory issues via profiling, caching and server tuning — 3x reduction in response time.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">May 2022 — May 2023</p>
+            <p class="time-title">Huckleberry — Insurance broker company</p>
+            <p class="text-ash text-sm mt-1">Ruby on Rails Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Developed a digital signature feature improving document workflow efficiency.</li>
+              <li>Delivered technical talks on AWS ECS deployment and authored articles on custom fields for ActiveRecord.</li>
+              <li>Reduced flaky tests — CI success rate improved from p85 to p95.</li>
+              <li>Integrated Apache Kafka for log auditing, boosting log processing speed by 60%.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Mar 2021 — Apr 2022</p>
+            <p class="time-title">Envol — Mind-body wellness app</p>
+            <p class="text-ash text-sm mt-1">Ruby on Rails Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Designed RESTful APIs supporting scalable, maintainable service interactions.</li>
+              <li>Built a subscription processing system integrated with App Store and Play Store for in-app purchases.</li>
+              <li>Engineered a recommendation engine using the Strategy pattern, supporting 520+ conditions.</li>
+              <li>Created a Trends feature leveraging PostgreSQL's <code>generate_series()</code> for efficient time-series aggregation.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Mar 2019 — Jan 2022</p>
+            <p class="time-title">SwiftComply — B2B online marketplace</p>
+            <p class="text-ash text-sm mt-1">Ruby on Rails Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Developed and integrated a signature feature, enabling secure digital signing and improving document workflow efficiency.</li>
+              <li>Participated in code reviewing, investigating mistakes in the code, and raising them to the team.</li>
+              <li>Delivered technical talks on AWS ECS deployment and authored articles on managing custom fields for an ActiveRecord object in Rails, enhancing team expertise.</li>
+              <li>Worked on decreasing flaky tests — CI insights showed an increase in success rate from p85 to p95.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Oct 2018 — Feb 2019</p>
+            <p class="time-title">AttributionApp — AdTech company</p>
+            <p class="text-ash text-sm mt-1">Ruby on Rails Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Added Quora Ads API integration for client spend tracking with 100% test coverage.</li>
+              <li>Replaced notification alerts using React.js for real-time updates, increasing user engagement by 15%.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Apr 2018 — Nov 2018</p>
+            <p class="time-title">ErinoakKids — Children's treatment center</p>
+            <p class="text-ash text-sm mt-1">Ruby on Rails Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Designed application architecture from scratch with RBAC-based authorization.</li>
+              <li>Implemented advanced filtering with the Ransack gem.</li>
+              <li>Integrated a third-party chat system, enabling more effective communication between patients and staff.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Oct 2017 — Apr 2018</p>
+            <p class="time-title">Helsetjenester — Healthcare marketplace</p>
+            <p class="text-ash text-sm mt-1">Ruby on Rails Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Built a new integration with Opus Dental using SOA architecture and the Factory pattern, enabling patients to book dentist appointments through the Helsetjenester portal.</li>
+              <li>Set up automated server deployment using the Capistrano gem.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Feb 2017 — Sep 2017</p>
+            <p class="time-title">MTP — Mystery Shopping Service</p>
+            <p class="text-ash text-sm mt-1">Ruby on Rails Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Added new functionality to the MTP Portal based on user stories.</li>
+              <li>Participated in discussions of new features with the support team.</li>
+              <li>Helped the service company complete the V2 version of the product.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Personal Projects -->
+    <section id="projects" class="section-wrap">
+      <h2 class="big-bg-title">Projects</h2>
+      <div class="section-frame">
+        <div class="text-center mb-10">
+          <div class="icon-holder-center">
+            <span class="font-display text-4xl text-ink">🚀</span>
+          </div>
+          <h3 class="section-title mt-2">Personal Projects</h3>
+        </div>
+
+        <ol class="relative border-l border-mist ml-4 md:ml-8 space-y-10">
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Oct 2023 — Oct 2025</p>
+            <p class="time-title">Folium — Mobile Book Summaries App</p>
+            <p class="text-ash text-sm mt-1">Founder / Full-stack Mobile Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Designed and developed a 12+ screen mobile application on the FlutterFlow platform, implementing a custom audio player and text reader.</li>
+              <li>Generated large-scale content (text, book covers, and audio) for 1,500 digital books using Vertex AI and Gemini generative models.</li>
+              <li>Integrated subscription and monetization features via RevenueCat, enabling seamless in-app purchases.</li>
+              <li>Implemented secure authentication workflows including Apple Sign-In and Google Sign-In.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Feb 2018 — Jun 2018</p>
+            <p class="time-title">NKAN — Open Data Portal CMS</p>
+            <p class="text-ash text-sm mt-1">Full-stack Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Built a backend-free open data portal powered by Express.js and MongoDB.</li>
+              <li>Developed a CLI-based installation and configuration system for simplified project setup.</li>
+              <li>Built localization support with multilingual interface support for English and Ukrainian.</li>
+            </ul>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2 w-3 h-3 rounded-full bg-white border border-ink"></span>
+            <p class="time-year">Oct 2013 — Dec 2014</p>
+            <p class="time-title">Sellpub — Listing website for sale social media groups</p>
+            <p class="text-ash text-sm mt-1">Founder / Full-stack Developer</p>
+            <ul class="text-ash text-sm mt-3 leading-relaxed max-w-2xl list-disc pl-5 space-y-1">
+              <li>Built a marketplace platform for buying and selling social media groups across multiple platforms.</li>
+              <li>Implemented messaging between buyers and sellers.</li>
+              <li>Integrated payment gateway for listing promotions.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Fun fact / counters -->
+    <section class="section-wrap">
+      <div class="text-center">
+        <ul class="counter-list whitespace-nowrap overflow-x-auto py-4">
+          <li class="counter-li">
+            <h3 class="text-3xl font-display text-ink">9+</h3>
+            <p class="text-xs text-ash mt-2 tracking-wider2 uppercase">Years experience</p>
+          </li>
+          <li class="counter-li">
+            <h3 class="text-3xl font-display text-ink">35+</h3>
+            <p class="text-xs text-ash mt-2 tracking-wider2 uppercase">Projects shipped</p>
+          </li>
+          <li class="counter-li">
+            <h3 class="text-3xl font-display text-ink">∞</h3>
+            <p class="text-xs text-ash mt-2 tracking-wider2 uppercase">Tasks delivered</p>
+          </li>
+          <li class="counter-li">
+            <h3 class="text-3xl font-display text-ink">∞</h3>
+            <p class="text-xs text-ash mt-2 tracking-wider2 uppercase">Cups of coffee</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section-wrap">
+      <h2 class="big-bg-title">Work</h2>
+      <div class="section-frame">
+        <div class="text-center mb-10">
+          <div class="icon-holder-center">
+            <span class="font-display text-4xl text-ink">🏆</span>
+          </div>
+          <h3 class="section-title mt-2">Certifications</h3>
+          <p class="text-ash text-sm mt-2">A selection of certifications I've earned.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <a href="https://www.credly.com/badges/33651f81-08f0-46d0-b1b3-b159c7d9094b/linked_in_profile" target="_blank" rel="noopener">
+            <article class="box-it">
+              <img src="https://images.credly.com/size/340x340/images/614465c6-1d80-4ae6-a323-753de224422a/image.png" alt="Professional Cloud Developer Certification" class="!object-contain bg-paper p-6">
+              <div class="box-inner">
+                <h4 class="font-display text-lg text-white">Professional Cloud Developer</h4>
+                <p class="text-xs mt-2 px-2">Google Cloud — verify on Credly</p>
+              </div>
+            </article>
+          </a>
+
+          <a href="https://www.credly.com/badges/64273bf3-dc04-464b-94e7-2c7a8e83a150/linked_in_profile" target="_blank" rel="noopener">
+            <article class="box-it">
+              <img src="https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="AWS Certified Developer – Associate" class="!object-contain bg-paper p-6">
+              <div class="box-inner">
+                <h4 class="font-display text-lg text-white">AWS Certified Developer – Associate</h4>
+                <p class="text-xs mt-2 px-2">Amazon Web Services — verify on Credly</p>
+              </div>
+            </article>
+          </a>
+
+          <a href="https://lms.robotdreams.cc/certificate/879668aa10ad0811d4396cf9085f91df" target="_blank" rel="noopener">
+            <article class="box-it">
+              <img src="img/certificate_340x340.png" alt="Highload Software Architecture Certificate">
+              <div class="box-inner">
+                <h4 class="font-display text-lg text-white">Highload Software Architecture</h4>
+                <p class="text-xs mt-2 px-2">Robot Dreams — by Yaroslav Litus (Google)</p>
+              </div>
+            </article>
+          </a>
+
+          <a href="https://www.apollographql.com/tutorials/certifications/777f646a-73c2-4caa-83c7-4a86eb439deb" target="_blank" rel="noopener">
+            <article class="box-it">
+              <img src="img/Hexagon_m5lnjm.svg" alt="Apollo Graph Developer Associate Certificate" class="!object-contain bg-paper p-6">
+              <div class="box-inner">
+                <h4 class="font-display text-lg text-white">Graph Developer — Associate</h4>
+                <p class="text-xs mt-2 px-2">Apollo GraphQL — verify certificate</p>
+              </div>
+            </article>
+          </a>
+
+          <a href="https://www.udemy.com/certificate/UC-d3d6052c-3c74-4b44-9efc-3cfd921698d0/" target="_blank" rel="noopener">
+            <article class="box-it">
+              <img src="img/udemy_certificate_340x340.png" alt="AI Engineer Agentic Track Certificate">
+              <div class="box-inner">
+                <h4 class="font-display text-lg text-white">AI Engineer Agentic Track</h4>
+                <p class="text-xs mt-2 px-2">Udemy — Complete Agent & MCP Course</p>
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Writings -->
+    <section id="writings" class="section-wrap">
+      <h2 class="big-bg-title">Writings</h2>
+      <div class="section-frame">
+        <div class="text-center mb-10">
+          <div class="icon-holder-center">
+            <span class="font-display text-4xl text-ink">✍️</span>
+          </div>
+          <h3 class="section-title mt-2">My Writings</h3>
+          <p class="text-ash text-sm mt-2">Articles and technical posts I've authored.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <a href="https://syndicode.com/blog/manage-custom-fields-for-an-activerecord-object-in-rails/" target="_blank" rel="noopener">
+            <article class="box-it">
+              <div class="w-full h-full flex flex-col items-center justify-center text-center px-6 bg-paper transition-opacity duration-300">
+                <span class="text-4xl mb-4">📝</span>
+                <h4 class="font-display text-base text-ink leading-snug">Manage Custom Fields for an ActiveRecord Object in Rails</h4>
+              </div>
+              <div class="box-inner">
+                <h4 class="font-display text-lg text-white">Custom fields pattern for ActiveRecord models</h4>
+              </div>
+            </article>
+          </a>
+
+          <a href="https://syndicode.com/blog/how-to-create-the-age-gate-page-in-the-rails-app/" target="_blank" rel="noopener">
+            <article class="box-it">
+              <div class="w-full h-full flex flex-col items-center justify-center text-center px-6 bg-paper transition-opacity duration-300">
+                <span class="text-4xl mb-4">📝</span>
+                <h4 class="font-display text-base text-ink leading-snug">How to Create the Age Gate Page in the Rails App</h4>
+              </div>
+              <div class="box-inner">
+                <h4 class="font-display text-lg text-white">Implementing an age verification gate in Rails</h4>
+              </div>
+            </article>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-wrap">
+      <h2 class="big-bg-title">Contact</h2>
+      <div class="section-frame">
+        <div class="text-center mb-10">
+          <div class="icon-holder-center">
+            <span class="font-display text-4xl text-ink">✉️</span>
+          </div>
+          <h3 class="section-title mt-2">Get in touch</h3>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <p class="font-display text-ink text-lg">Email: <a href="mailto:eduard.horiach@gmail.com">eduard.horiach@gmail.com</a></p>
+            <p class="font-display text-ink text-lg mt-2">Phone: <a href="tel:+34624958748">+34 624 958 748</a></p>
+            <div class="sep-mini"></div>
+            <p class="text-ash text-sm leading-relaxed mt-6 max-w-md">
+              Have a project in mind, want to collaborate, or just want to say hi?
+              Drop a message — I'd love to hear from you.
+            </p>
+            <div class="flex gap-4 mt-6">
+              <a href="https://github.com/edlvj" target="_blank" rel="noopener" class="text-sm">GitHub</a>
+              <a href="https://www.linkedin.com/in/eduard-horiach/" target="_blank" rel="noopener" class="text-sm">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center py-12 text-xs text-mist tracking-wider2">
+      &copy; <span id="year"></span> Eduard Horiach — built with Tailwind CSS.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll for the side dot navigation
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          const el = document.querySelector(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // Animate skill bars on intersection
+    const bars = document.querySelectorAll('.skillbar-bar');
+    bars.forEach((b) => { b.dataset.width = b.style.width; b.style.width = '0%'; });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.width;
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    bars.forEach((b) => io.observe(b));
+  </script>
+</body>
+</html>
